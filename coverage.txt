@@ -1,3 +1,0 @@
-mode: atomic
-library/cmd/generator/main.go:3.15,5.2 0 0
-library/cmd/generator/main.go:6.32,8.2 1 3
