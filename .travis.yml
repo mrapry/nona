@@ -5,7 +5,7 @@ go:
 
 before_install:
   - go mod tidy
-  - go get -t -v ./...
+#  - go get -t -v ./...
 
 script:
   - go test ./... -race -coverprofile=coverage.txt -covermode=atomic
