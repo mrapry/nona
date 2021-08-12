@@ -1,11 +1,9 @@
 package main
 
-import "fmt"
-
 func main()  {
-	fmt.Println("main")
+	penjumlahan(1,2)
 }
 
-func cobaFunction()  {
-	fmt.Println("coba")
+func penjumlahan(a, b int) int {
+	return a+b
 }
