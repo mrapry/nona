@@ -4,15 +4,13 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
-
 	"github.com/labstack/echo"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestCreateHttpRequestMock(t *testing.T) {
 	t.Run("Test set echo http mock", func(t *testing.T) {
 		c := SetEchoHTTPMock("/", http.MethodGet, `{"message" : "success"}`, map[string]string{echo.HeaderContentType: echo.MIMEApplicationJSON})
-
 		assert.NotNil(t, c)
 	})
 }

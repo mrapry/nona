@@ -9,10 +9,6 @@ import (
 	"github.com/labstack/echo"
 )
 
-const (
-	ErrorGeneral = "error"
-)
-
 // http request mock
 func CreateHttpRequestMock(method string, url string, code int, response interface{}) {
 	httpmock.RegisterResponder(method, url, func(req *http.Request) (*http.Response, error) {

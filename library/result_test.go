@@ -1,4 +1,4 @@
-package helper
+package library
 
 import (
 	"reflect"
@@ -80,7 +80,7 @@ func TestMeta_ToResolver(t *testing.T) {
 		want   *MetaResolver
 	}{
 		{
-			name:"positif case",
+			name: "positif case",
 			fields: fields{
 				Page:         1,
 				Limit:        10,
@@ -137,7 +137,7 @@ func TestNewMeta(t *testing.T) {
 			},
 		},
 	}
-		for _, tt := range tests {
+	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := NewMeta(tt.args.page, tt.args.limit, tt.args.totalRecords); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("NewMeta() = %v, want %v", got, tt.want)
