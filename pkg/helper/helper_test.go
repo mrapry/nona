@@ -1,6 +1,9 @@
 package helper
 
-import "testing"
+import (
+	"reflect"
+	"testing"
+)
 
 func TestCheckStringNotNull(t *testing.T) {
 	type args struct {
@@ -63,6 +66,40 @@ func TestStringInSlice(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := StringInSlice(tt.args.str, tt.args.list); got != tt.want {
 				t.Errorf("StringInSlice() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestToBytes(t *testing.T) {
+	type args struct {
+		i interface{}
+	}
+	tests := []struct {
+		name  string
+		args  args
+		wantB []byte
+	}{
+		{
+			name:  "positif",
+			args:  args{"halo"},
+			wantB: ToBytes("halo"),
+		},
+		{
+			name:  "positif",
+			args:  args{ToBytes("halo")},
+			wantB: ToBytes("halo"),
+		},
+		{
+			name:  "positif",
+			args:  args{123},
+			wantB: ToBytes(123),
+		},
+	}
+		for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if gotB := ToBytes(tt.args.i); !reflect.DeepEqual(gotB, tt.wantB) {
+				t.Errorf("ToBytes() = %v, want %v", gotB, tt.wantB)
 			}
 		})
 	}

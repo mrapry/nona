@@ -1,5 +1,6 @@
 package helper
 
+import "encoding/json"
 
 // StringInSlice function for checking whether string in slice
 // str string searched string
@@ -20,4 +21,17 @@ func CheckStringNotNull(data string) bool {
 	}
 
 	return true
+}
+
+// ToBytes convert all types to bytes
+func ToBytes(i interface{}) (b []byte) {
+	switch t := i.(type) {
+	case []byte:
+		b = t
+	case string:
+		b = []byte(t)
+	default:
+		b, _ = json.Marshal(i)
+	}
+	return
 }
