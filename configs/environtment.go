@@ -18,9 +18,9 @@ func GetEnv() Environment {
 func loadAdditionalEnv() {
 	var ok bool
 
-	env.Kafka.TopicSample, ok = os.LookupEnv("app.kafka.topic.xxx")
+	env.Kafka.TopicSample, ok = os.LookupEnv("app.kafka.topic.sample")
 	if !ok {
-		panic("missing app.kafka.topic.xxx environment")
+		panic("missing app.kafka.topic.sample environment")
 	}
 
 }
