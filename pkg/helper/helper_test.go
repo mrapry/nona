@@ -15,18 +15,17 @@ func TestCheckStringNotNull(t *testing.T) {
 		want bool
 	}{
 		{
-			name: "Positif case",
+			name: "Positive case",
 			args: args{data: "oke"},
 			want: true,
 		},
 		{
-			name: "negatif case",
+			name: "negative case",
 			args: args{},
 			want: false,
 		},
-
 	}
-		for _, tt := range tests {
+	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := CheckStringNotNull(tt.args.data); got != tt.want {
 				t.Errorf("CheckStringNotNull() = %v, want %v", got, tt.want)
@@ -46,23 +45,23 @@ func TestStringInSlice(t *testing.T) {
 		want bool
 	}{
 		{
-			name: "positif",
+			name: "positive",
 			args: args{
-				str:  "dua",
-				list: []string{"satu","dua"},
+				str:  "two",
+				list: []string{"one", "two"},
 			},
 			want: true,
 		},
 		{
-			name: "negatif",
+			name: "negative",
 			args: args{
-				str:  "dua",
-				list: []string{"satu","tiga"},
+				str:  "two",
+				list: []string{"one", "three"},
 			},
 			want: false,
 		},
 	}
-		for _, tt := range tests {
+	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := StringInSlice(tt.args.str, tt.args.list); got != tt.want {
 				t.Errorf("StringInSlice() = %v, want %v", got, tt.want)
@@ -81,22 +80,22 @@ func TestToBytes(t *testing.T) {
 		wantB []byte
 	}{
 		{
-			name:  "positif",
-			args:  args{"halo"},
-			wantB: ToBytes("halo"),
+			name:  "positive",
+			args:  args{"hello"},
+			wantB: ToBytes("hello"),
 		},
 		{
-			name:  "positif",
-			args:  args{ToBytes("halo")},
-			wantB: ToBytes("halo"),
+			name:  "positive",
+			args:  args{ToBytes("hello")},
+			wantB: ToBytes("hello"),
 		},
 		{
-			name:  "positif",
+			name:  "positive",
 			args:  args{123},
 			wantB: ToBytes(123),
 		},
 	}
-		for _, tt := range tests {
+	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if gotB := ToBytes(tt.args.i); !reflect.DeepEqual(gotB, tt.wantB) {
 				t.Errorf("ToBytes() = %v, want %v", gotB, tt.wantB)

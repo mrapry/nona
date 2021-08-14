@@ -43,7 +43,7 @@ func (m *Meta) ToResolver() *MetaResolver {
 	}
 }
 
-// MetaResolver model for graphql resolver, graphql doesn't support int64 data type (https://github.com/graphql/graphql-spec/issues/73)
+// MetaResolver domain for graphql resolver, graphql doesn't support int64 data type (https://github.com/graphql/graphql-spec/issues/73)
 type MetaResolver struct {
 	Page         int32 `json:"page"`
 	Limit        int32 `json:"limit"`

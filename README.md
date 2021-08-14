@@ -6,12 +6,5 @@
 [![codecov](https://codecov.io/gh/mrapry/nona/branch/master/graph/badge.svg?token=yzUZtd9Y5J)](https://codecov.io/gh/mrapry/nona)
 
 
-Translation :
-* Indonesia
-* English
-
-
-
-
 Source :
-https://github.com/golang-standards/project-layout/
+* **Golang Layout** : https://github.com/golang-standards/project-layout/

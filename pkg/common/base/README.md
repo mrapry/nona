@@ -7,7 +7,7 @@ This package use for define base model like  MongoDB and SQL created. So you no 
 
 Sample Code
 ```go
-//ModelSQL structure define model for SQL
+//ModelSQL structure define domain for SQL
 type ModelSQL struct {
 	ID string             `json:"id"`
 	IsDeleted bool        `json:"is_deleted"`
@@ -17,7 +17,7 @@ type ModelSQL struct {
 	ModifiedAt *time.Time `json:"modified_at"`
 }
 
-//ModelMongo structure define model for MongoDB
+//ModelMongo structure define domain for MongoDB
 type ModelMongo struct {
 	ID string             `bson:"_id"`
 	IsDeleted bool        `bson:"is_deleted"`
