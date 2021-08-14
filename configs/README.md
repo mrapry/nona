@@ -1,14 +1,14 @@
-#Configs System
+# Configs System
 
 We have 2 file in here.
 * config
 * environment
 
-##Config
+## Config
 
 Use for config system like using dependency, database, etc
 
-##Environment
+## Environment
 
 Use for load Environment OS additional need for system. Sample you have config for topic kafka. you just set like this
 
